@@ -1,0 +1,19 @@
+<nav class="navbar navbar-dark bg-dark text-center text-light fade-in-image">
+  <div class="container">
+    Administrador de usuarios
+  </div>
+</nav>
+
+<div class="container d-flex bd-highlight mb-3 fade-in-image">
+  <div class="me-auto p-2 bd-highlight">
+    <button class="btn btn-info text-light" (click)="listar()">Listar</button>
+  </div>  
+  <div class="p-2 bd-highlight">
+    <button class="btn btn-info text-light" (click)="nuevo()">Registrar Usuario</button>
+  </div>
+  <div class="p-2 bd-highlight">
+    <button class="btn btn-info text-light" (click)="editarAdministrador()">Editar Administrador</button>    
+  </div>
+</div>
+
+<router-outlet></router-outlet>

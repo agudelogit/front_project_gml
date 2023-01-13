@@ -1,0 +1,35 @@
+<div class="container fade-in-image">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th>NOMBRE</th>
+        <th>APELLIDO</th>
+        <th>CEDULA</th>
+        <th>EMAIL</th>
+        <th>PAÍS</th>
+        <th>DIRECCIÓN</th>
+        <th>CELULAR</th>
+        <th>CATEGORIA</th>
+        <th>ACCIONES</th>
+      </tr> 
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <th scope="row">{{ usuario.id }}</th>
+        <td [title]="usuario.nombre">{{ usuario.nombre }}</td>
+        <td [title]="usuario.apellido">{{ usuario.apellido }}</td>
+        <td [title]="usuario.cedula">{{ usuario.cedula }}</td>
+        <td [title]="usuario.email">{{ usuario.email }}</td>
+        <td [title]="getCountryForId(usuario.pais)">{{ getCountryForId( usuario.pais ) }}</td>
+        <td [title]="usuario.direccion">{{ usuario.direccion }}</td>
+        <td [title]="usuario.celular">{{ usuario.celular }}</td>
+        <td [title]="getCategoryForId(usuario.category_id)">{{ getCategoryForId( usuario.category_id ) }}</td>
+        <td>
+          <button class="btn btn-warning mx-2" (click)="editar( usuario.id )">Editar</button>
+          <button class="btn btn-danger" (click)="eliminarUsuario( usuario.id, usuario.nombre )">Eliminar</button>
+        </td>
+      </tr>     
+    </tbody>
+  </table>
+</div>

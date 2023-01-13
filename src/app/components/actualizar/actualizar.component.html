@@ -1,0 +1,118 @@
+<div class="container fade-in-image d-flex justify-content-center">
+    <form autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="guardar()" class="w-50  ">
+        <h2 *ngIf="id != 1 ">ACTUALIZAR</h2>
+        <h2 *ngIf="id == 1 ">ACTUALIZAR ADMINISTRADOR</h2>
+        <hr>
+        <!-- Nombre -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Nombres</label>
+            <div class="col-sm-9">
+                <input class="form-control" formControlName="nombre">
+                <span class="form-text text-danger" *ngIf="campoEsValido('nombre')">
+                    Este campo es obligatorio, debe contener mínimo 5 caracteres, máximo 100, no debe contener
+                    caracteres numéricos.
+                </span>
+            </div>
+        </div>
+
+        <!-- Apellido -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Apellidos</label>
+            <div class="col-sm-9">
+                <input class="form-control" formControlName="apellido">
+                <span class="form-text text-danger" *ngIf="campoEsValido('apellido')">
+                    Este campo es obligatorio, debe contener mínimo 5 caracteres, máximo 100, no debe contener
+                    caracteres numéricos.
+                </span>
+            </div>
+        </div>
+
+        <!-- Cédula -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Cédula</label>
+            <div class="col-sm-9">
+                <input class="form-control" formControlName="cedula">
+                <span class="form-text text-danger" *ngIf="campoEsValido('cedula')">
+                    Este campo es obligatorio, debe contener un número de cédula válido.
+                </span>
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Correo electrónico</label>
+            <div class="col-sm-9">
+                <input class="form-control" formControlName="email">
+                <span class="form-text text-danger" *ngIf="campoEsValido('email')">
+                    Este campo es obligatorio, debe ser un correo electrónico válido, ej: ejemplo@ejemplo.com.co.
+                </span>
+            </div>
+        </div>
+
+        <!-- País -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">País</label>
+            <div class="col-sm-9">
+                <select class="form-control" formControlName="pais">
+                    <option value="">Seleccione un país</option>
+                    <option *ngFor="let pais of paises" [value]="pais.numericCode">{{ pais.name }}</option>
+                </select>
+                <span class="form-text text-danger" *ngIf="campoEsValido('pais')">
+                    Este campo es obligatorio
+                </span>
+            </div>
+        </div>
+
+        <!-- Dirección -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Dirección</label>
+            <div class="col-sm-9">
+                <input class="form-control" formControlName="direccion">
+                <span class="form-text text-danger" *ngIf="campoEsValido('direccion')">
+                    Este campo es obligatorio
+                </span>
+            </div>
+        </div>
+
+        <!-- Celular -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Celular</label>
+            <div class="col-sm-9">
+                <input class="form-control" formControlName="celular">
+                <span class="form-text text-danger" *ngIf="campoEsValido('celular')">
+                    Este campo es obligatorio, debe contener 10 dígitos.
+                </span>
+            </div>
+        </div>
+
+        <!-- Categoría -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Categoría</label>
+            <div class="col-sm-9">
+                <select class="form-control" formControlName="category_id">
+                    <option value="">Seleccione un país</option>
+                    <option *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.descripcion }}</option>
+                </select>
+                <span class="form-text text-danger" *ngIf="campoEsValido('category_id')">
+                    Este campo es obligatorio
+                </span>
+            </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-primary float-end" (click)="guardar()">
+                    Guardar
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <!-- <span>Valid</span>
+    <pre>{{ miFormulario.valid }}</pre>
+    <br>
+
+    <span>Value</span>
+    <pre>{{ miFormulario.value | json }}</pre> -->
+</div>
