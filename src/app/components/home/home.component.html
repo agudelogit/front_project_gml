@@ -1,6 +1,6 @@
-<div class="container fade-in-image">
-  <table class="table">
-    <thead>
+<div class="container fade-in-image table-responsive">
+  <table class="table table-striped table-bordered border-light">
+    <thead class="text-info border-light">
       <tr>
         <th scope="col">ID</th>
         <th>NOMBRE</th>
@@ -15,7 +15,7 @@
       </tr> 
     </thead>
     <tbody>
-      <tr *ngFor="let usuario of usuarios">
+      <tr *ngFor="let usuario of usuarios" class="text-secondary">
         <th scope="row">{{ usuario.id }}</th>
         <td [title]="usuario.nombre">{{ usuario.nombre }}</td>
         <td [title]="usuario.apellido">{{ usuario.apellido }}</td>
@@ -25,9 +25,9 @@
         <td [title]="usuario.direccion">{{ usuario.direccion }}</td>
         <td [title]="usuario.celular">{{ usuario.celular }}</td>
         <td [title]="getCategoryForId(usuario.category_id)">{{ getCategoryForId( usuario.category_id ) }}</td>
-        <td>
-          <button class="btn btn-warning mx-2" (click)="editar( usuario.id )">Editar</button>
-          <button class="btn btn-danger" (click)="eliminarUsuario( usuario.id, usuario.nombre )">Eliminar</button>
+        <td class="d-flex">
+          <button title="Editar usuario" class="btn mx-2 btn-gml-small" (click)="editar( usuario.id )"><i class="bi bi-pen text-info"></i></button>
+          <button title="Eliminar usuario" class="btn btn-gml-small" (click)="eliminarUsuario( usuario.id, usuario.nombre )"><i class="bi bi-trash text-danger"></i></button>
         </td>
       </tr>     
     </tbody>

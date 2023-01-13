@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    baseUrl: 'http://localhost:8000/api',
+    baseUrl: 'https://lasmojarras.online/api',
     restCountriesUrl: 'https://restcountries.com/v2'
   };
   

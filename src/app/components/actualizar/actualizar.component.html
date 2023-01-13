@@ -1,10 +1,10 @@
 <div class="container fade-in-image d-flex justify-content-center">
     <form autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="guardar()" class="w-50  ">
-        <h2 *ngIf="id != 1 ">ACTUALIZAR</h2>
-        <h2 *ngIf="id == 1 ">ACTUALIZAR ADMINISTRADOR</h2>
+        <h2 *ngIf="id != 1 " class="text-secondary">ACTUALIZAR</h2>
+        <h2 *ngIf="id == 1 " class="text-secondary">ACTUALIZAR ADMINISTRADOR</h2>
         <hr>
         <!-- Nombre -->
-        <div class="mb-3 row">
+        <div class="mb-3 row text-secondary">
             <label class="col-sm-3 col-form-label">Nombres</label>
             <div class="col-sm-9">
                 <input class="form-control" formControlName="nombre">
@@ -16,7 +16,7 @@
         </div>
 
         <!-- Apellido -->
-        <div class="mb-3 row">
+        <div class="mb-3 row text-secondary">
             <label class="col-sm-3 col-form-label">Apellidos</label>
             <div class="col-sm-9">
                 <input class="form-control" formControlName="apellido">
@@ -28,7 +28,7 @@
         </div>
 
         <!-- Cédula -->
-        <div class="mb-3 row">
+        <div class="mb-3 row text-secondary">
             <label class="col-sm-3 col-form-label">Cédula</label>
             <div class="col-sm-9">
                 <input class="form-control" formControlName="cedula">
@@ -39,7 +39,7 @@
         </div>
 
         <!-- Email -->
-        <div class="mb-3 row">
+        <div class="mb-3 row text-secondary">
             <label class="col-sm-3 col-form-label">Correo electrónico</label>
             <div class="col-sm-9">
                 <input class="form-control" formControlName="email">
@@ -50,7 +50,7 @@
         </div>
 
         <!-- País -->
-        <div class="mb-3 row">
+        <div class="mb-3 row text-secondary">
             <label class="col-sm-3 col-form-label">País</label>
             <div class="col-sm-9">
                 <select class="form-control" formControlName="pais">
@@ -64,7 +64,7 @@
         </div>
 
         <!-- Dirección -->
-        <div class="mb-3 row">
+        <div class="mb-3 row text-secondary">
             <label class="col-sm-3 col-form-label">Dirección</label>
             <div class="col-sm-9">
                 <input class="form-control" formControlName="direccion">
@@ -75,7 +75,7 @@
         </div>
 
         <!-- Celular -->
-        <div class="mb-3 row">
+        <div class="mb-3 row text-secondary">
             <label class="col-sm-3 col-form-label">Celular</label>
             <div class="col-sm-9">
                 <input class="form-control" formControlName="celular">
@@ -86,11 +86,11 @@
         </div>
 
         <!-- Categoría -->
-        <div class="mb-3 row">
+        <div class="mb-3 row text-secondary">
             <label class="col-sm-3 col-form-label">Categoría</label>
             <div class="col-sm-9">
                 <select class="form-control" formControlName="category_id">
-                    <option value="">Seleccione un país</option>
+                    <option value="">Seleccione una categoría</option>
                     <option *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.descripcion }}</option>
                 </select>
                 <span class="form-text text-danger" *ngIf="campoEsValido('category_id')">
@@ -102,7 +102,7 @@
         <!-- Submit button -->
         <div class="row">
             <div class="col-sm-12">
-                <button type="button" class="btn btn-primary float-end" (click)="guardar()">
+                <button type="button" class="btn btn-primary float-end btn-gml" (click)="guardar()">
                     Guardar
                 </button>
             </div>

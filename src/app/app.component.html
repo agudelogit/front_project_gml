@@ -1,19 +1,31 @@
-<nav class="navbar navbar-dark bg-dark text-center text-light fade-in-image">
-  <div class="container">
-    Administrador de usuarios
+<nav class="navbar navbar-dark text-center text-dark fade-in-image mt-5 mb-3">
+  <div class="container d-flex flex-column">
+    <h1 class="text-secondary">Administrador de usuarios<hr></h1>
+    
   </div>
+ 
 </nav>
 
 <div class="container d-flex bd-highlight mb-3 fade-in-image">
   <div class="me-auto p-2 bd-highlight">
-    <button class="btn btn-info text-light" (click)="listar()">Listar</button>
+    <button class="btn btn-info text-light btn-gml" (click)="listar()">Listar</button>
   </div>  
   <div class="p-2 bd-highlight">
-    <button class="btn btn-info text-light" (click)="nuevo()">Registrar Usuario</button>
+    <button class="btn btn-info text-light btn-gml" (click)="nuevo()">Nuevo</button>
   </div>
   <div class="p-2 bd-highlight">
-    <button class="btn btn-info text-light" (click)="editarAdministrador()">Editar Administrador</button>    
+    <button class="btn btn-info text-light btn-gml" (click)="editarAdministrador()">Editar Administrador</button>    
   </div>
 </div>
 
 <router-outlet></router-outlet>
+
+<div class="footer position-absolute bottom-0 bg-dark w-100 text-light d-flex justify-content-center">
+  <p class="text-center py-3">Walther Alejandro Agudelo Herrera    
+    <br>
+    Usado: Laravel - Angular - Postgresql - Servidor Linux
+    <br>
+    &copy; 2023
+  </p>
+  
+</div>
